@@ -48,15 +48,15 @@ Additionally, we improved upon Numbeo’s Quality of life statistic which was ca
 
 ```javascript
 index.main = Math.max(0,
-100
-+ (purchasingPowerInclRentIndex / 2.5)
-- (houseToIncomeRatio * 1.0)
-- (costOfLivingIndex / 10)
-+ (safetyIndex / 2.0)
-+ (healthIndex / 2.5)
-- (trafficTimeIndex / 2.0)
-- (pollitionIndex * 2.0 / 3.0)
-+ (climateIndex / 3.0)
+  100
+  + (purchasingPowerInclRentIndex / 2.5)
+  - (houseToIncomeRatio * 1.0)
+  - (costOfLivingIndex / 10)
+  + (safetyIndex / 2.0)
+  + (healthIndex / 2.5)
+  - (trafficTimeIndex / 2.0)
+  - (pollitionIndex * 2.0 / 3.0)
+  + (climateIndex / 3.0)
 )
 ```
 
