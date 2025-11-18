@@ -76,6 +76,16 @@ https://github.com/tnichols217/DataVisualizationChallenge
 
 All of our work is uploaded to GitHub with complete instructions on how the code is run, complete with development environments and documentation.
 
+### Running
+
+You may utilize our included nix devshell for development with `nix develop` or activate the bundled direnv with `direnv allow`.
+
+The nix flake also includes a build for our graphic, which may be reproduced with `nix --extra-experimental-features "flakes nix-command ca-derivations" build .#plots`.
+
+All source is included within the `./src` folder, with `main.py` as our entrypoint.
+
+If not using `nix`, you may obtain the data manually or with the `download_data.sh` script.
+
 ## Works Cited
 
 Cleveland, OH: Cost of living, prices for Rent & Food [2025]. (2025). Retrieved from [https://livingcost.org/cost/united-states/oh/](https://livingcost.org/cost/united-states/oh/)
