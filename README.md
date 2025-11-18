@@ -68,6 +68,8 @@ As seen in our graphic, all aspects we compare are easy to interpret in comparis
 
 Our graphic does not try to mislead and assign a “ranking” to a city—something completely unrepresentative of such a complicated concept, and additionally calculate our QOL index by summing on the normalized data from 4 positive and negative metrics: purchasing power, safety index, health care, and climate; and cost of living, property to income ratio, traffic commute time, and pollution.
 
+![Updated Graphic](https://github.com/tnichols217/DataVisualizationChallenge/releases/download/release-0.0.3/all_plots.png)
+
 ## Code and Work
 
 https://github.com/tnichols217/DataVisualizationChallenge
