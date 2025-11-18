@@ -1,5 +1,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
+from src.types import QOLColumns as QC
+from .qol import get_qol
 
 def plot_all():
     # Load cleaned data
@@ -7,24 +9,24 @@ def plot_all():
     apmt_data = pd.read_csv("data/apmt_cleaned.csv")
 
     # Filter QOL columns to plot
-    qol_columns = {
-        "Health Care Index",
-        "Cost of Living Index",
-        "Property Price to Income Ratio"
-    }
+    qol_columns = { QC.HC, QC.TCT, QC.PPIR, QC.COL }
 
     # Filter apartment data to only "overall" bed size
     apmt_overall = apmt_data[apmt_data["bed_size"] == "overall"]
 
+    # Calculate our new overall QOL
+    qol[QC.QOL] = get_qol(qol)
+
     # Calculate total number of plots needed
-    total_plots = len(qol_columns) + 1  # QOL metrics + 1 apartment plot
+    total_plots = len(qol_columns) + 2  # QOL metrics + 1 apartment plot + Calculated QOL
+    qol_columns.add(QC.QOL)
 
     # Calculate grid dimensions
-    n_cols = 2
-    n_rows = (total_plots + n_cols - 1) // n_cols
+    n_rows = 2
+    n_cols = (total_plots + n_rows - 1) // n_rows
 
     # Create a single figure with subplots for ALL plots
-    fig, axes = plt.subplots(n_rows, n_cols, figsize=(9, 6 * n_rows))
+    _, axes = plt.subplots(n_rows, n_cols, figsize=(6 * n_rows, 9))
     axes = axes.flatten()
 
     # Plot QOL metrics
@@ -47,7 +49,7 @@ def plot_all():
             )
             ax.legend()
 
-        ax.set_title(f"{column}", fontsize=20)
+        ax.set_title(column.value, fontsize=20)
         ax.set_xticks([])
         ax.grid(True, alpha=0.3)
 

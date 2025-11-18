@@ -17,7 +17,7 @@ jobs:
       - name: Build Project
         shell: bash
         run: |
-          nix --extra-experimental-features "flakes nix-command" build .#default
+          nix --extra-experimental-features "flakes nix-command ca-derivations" build .#default
       - uses: ncipollo/release-action@v1
         with:
           artifacts: "result/*"
