@@ -78,8 +78,8 @@
 
         packages = rec {
           default = plots;
-          qol = pkgs.callPackage ./qol_src.nix {};
-          plots = pkgs.callPackage ./build.nix { inherit qol; };
+          qol = pkgs.callPackage ./nix/qol_src.nix {};
+          plots = pkgs.callPackage ./nix/build.nix { inherit qol; };
         };
       }
     );

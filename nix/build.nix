@@ -9,7 +9,7 @@ stdenv.mkDerivation {
   pname = "build-graphs";
   version = "0.0.1";
 
-  src = ./.;
+  src = ./..;
 
   buildInputs = [
     (python3.withPackages (

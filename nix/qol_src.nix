@@ -8,7 +8,7 @@ stdenv.mkDerivation {
   outputHash = "sha256-nGCQZAViOCjauaBlGeGN64GuC0D58j9aUaxskFHLsgc=";
   __contentAddressed = true;
 
-  src = ./.;
+  src = ./..;
 
   buildInputs = [
     (python3.withPackages (
