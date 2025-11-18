@@ -1,0 +1,1 @@
+"""Python project for analysing QOL in Cleveland, Ohio"""
