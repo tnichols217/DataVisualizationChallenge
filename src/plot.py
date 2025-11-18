@@ -4,6 +4,9 @@ from src.types import QOLColumns as QC
 from .qol import get_qol
 
 def plot_all():
+    """
+    Plot our 6 metrics on a subgraphed matplotlibs
+    """
     # Load cleaned data
     qol = pd.read_csv("data/qol_cleaned.csv")
     apmt_data = pd.read_csv("data/apmt_cleaned.csv")
@@ -27,6 +30,7 @@ def plot_all():
 
     # Create a single figure with subplots for ALL plots
     _, axes = plt.subplots(n_rows, n_cols, figsize=(6 * n_rows, 9))
+    plt.suptitle("Living in Cleveland from the perspective of the US", fontsize=20)
     axes = axes.flatten()
 
     # Plot QOL metrics
@@ -49,7 +53,7 @@ def plot_all():
             )
             ax.legend()
 
-        ax.set_title(column.value, fontsize=20)
+        ax.set_title(column.value, fontsize=15)
         ax.set_xticks([])
         ax.grid(True, alpha=0.3)
 
@@ -80,7 +84,7 @@ def plot_all():
         )
         ax.legend()
 
-    ax.set_title("Rent Prices (Overall)", fontsize=20)
+    ax.set_title("Rent Prices (Overall)", fontsize=15)
     ax.grid(True, alpha=0.3)
     ax.set_xticks([])
 

@@ -3,6 +3,9 @@ import pandas as pd
 from pathlib import Path
 
 def qol_to_csv(html: Path, output_csv: str):
+    """
+    Convert the website scrape into an interpretable CSV
+    """
     # Send HTTP request
     text = html.read_text()
 

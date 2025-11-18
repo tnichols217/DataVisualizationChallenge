@@ -1,6 +1,9 @@
 import pandas as pd
 
 def clean_apartment():
+    """
+    Clean our apartment input CSV
+    """
     apmt_data = pd.read_csv("data/apmt.csv")
 
     date_columns = [col for col in apmt_data.columns if col.startswith("20")]
@@ -26,6 +29,9 @@ def clean_apartment():
     location_summary.to_csv("data/apmt_cleaned.csv", index=False)
 
 def clean_qol():
+    """
+    Clean our scraped QOL CSV
+    """
     qol = pd.read_csv("data/qol.csv")
     qol = qol[qol["City"].str.endswith(", United States")]
     qol[["City", "State", "Country"]] = qol["City"].str.extract(r"^(.*), ([A-Z]{2}), (.*)$")

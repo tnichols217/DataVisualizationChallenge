@@ -34,5 +34,8 @@ def quantile_normalize(df: pd.DataFrame, columns):
     return normalized_data
 
 def get_qol(df: pd.DataFrame):
+    """
+    Get our QOL index given a dataframe
+    """
     df = quantile_normalize(df, list(columns_to_normalize))
     return 100 + df[list(positive_normalized_columns)].sum(axis=1) - df[list(negative_normalized_columns)].sum(axis=1)

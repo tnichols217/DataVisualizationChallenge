@@ -30,7 +30,7 @@ stdenv.mkDerivation {
     python -m src.convert
   '';
 
-  # Copy plots produced by the script
+  # Copy the outputted csv to the store
   installPhase = ''
     cp -r data/* $out
   '';
