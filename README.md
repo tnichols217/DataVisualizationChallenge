@@ -6,8 +6,7 @@ This project aims to improve upon an existing data visualization info graphic ab
 
 ## Problems with Original Visualization
 
-![Cost of living in Cleveland infographic](https://livingcost.org/assets/photo/cost/united-states/oh/cleveland.jpg)
-![Cost of living in San Diego infographic](https://livingcost.org/assets/photo/cost/united-states/ca/san-diego.jpg)
+<img src="https://livingcost.org/assets/photo/cost/united-states/oh/cleveland.jpg" alt="Cost of living in San Diego infographic" width="50%" /><img src="https://livingcost.org/assets/photo/cost/united-states/ca/san-diego.jpg" alt="Cost of living in San Diego infographic" width="50%" />
 
 ### Arbitrary nonlinear scaling of values
 
